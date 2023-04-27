@@ -21,16 +21,17 @@ const GameBoard = ({ boardImg, boardImgAlt }) => {
 
   const handleBoardImgClick = (e) => {
     const imgElement = e.target;
+
     const { cursorX, cursorY, imgRect } = getCursorPos(e, imgElement);
 
-    const relativePosX = imgRect.width / cursorX;
-    const relativePosY = imgRect.height / cursorY;
+    const relativePosX = Math.floor((cursorX / imgRect.width) * 100);
+    const relativePosY = Math.floor((cursorY / imgRect.height) * 100);
 
     const isWaldoFound =
-      relativePosX < CHARACTER_POSITION_BOUNDS.lvl1.waldo.xLeft &&
-      relativePosX > CHARACTER_POSITION_BOUNDS.lvl1.waldo.xRight &&
-      relativePosY < CHARACTER_POSITION_BOUNDS.lvl1.waldo.yTop &&
-      relativePosY > CHARACTER_POSITION_BOUNDS.lvl1.waldo.yBottom;
+      relativePosX > CHARACTER_POSITION_BOUNDS.lvl1.waldo.xLeft &&
+      relativePosX < CHARACTER_POSITION_BOUNDS.lvl1.waldo.xRight &&
+      relativePosY > CHARACTER_POSITION_BOUNDS.lvl1.waldo.yTop &&
+      relativePosY < CHARACTER_POSITION_BOUNDS.lvl1.waldo.yBottom;
 
     if (isWaldoFound) {
       setIsCharacterFound(true);
