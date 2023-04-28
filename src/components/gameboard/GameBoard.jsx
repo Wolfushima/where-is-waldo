@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import CHARACTER_POSITION_BOUNDS from '../../data/character-position-bounds';
+import { useSelector } from 'react-redux';
 import moveMagnifier from '../../utils/gameboard/move-magnifier';
 import getCursorPos from '../../utils/gameboard/get-cursor-pos';
 import Wrapper from '../Wrapper';
@@ -12,6 +12,9 @@ const GameBoard = ({ boardImg, boardImgAlt }) => {
     backgroundImage: `url(${boardImg})`,
   });
   const [isCharacterFound, setIsCharacterFound] = useState(false);
+  const WALDO_DATA = useSelector(
+    (state) => state.levels.LEVEL1.CHARACTERS_POSITION_BOUNDS.WALDO_LEVEL1
+  );
 
   const handleBoardImgZoom = (e) => {
     if (isZoomEnabled) {
@@ -27,11 +30,20 @@ const GameBoard = ({ boardImg, boardImgAlt }) => {
     const relativePosX = Math.floor((cursorX / imgRect.width) * 100);
     const relativePosY = Math.floor((cursorY / imgRect.height) * 100);
 
-    const isWaldoFound =
-      relativePosX > CHARACTER_POSITION_BOUNDS.lvl1.waldo.xLeft &&
-      relativePosX < CHARACTER_POSITION_BOUNDS.lvl1.waldo.xRight &&
-      relativePosY > CHARACTER_POSITION_BOUNDS.lvl1.waldo.yTop &&
-      relativePosY < CHARACTER_POSITION_BOUNDS.lvl1.waldo.yBottom;
+    const isCharacterLocated = (posX, posY, characterData) => {
+      return (
+        posX > characterData.xLeft &&
+        posX < characterData.xRight &&
+        posY > characterData.yTop &&
+        posY < characterData.yBottom
+      );
+    };
+
+    const isWaldoFound = isCharacterLocated(
+      relativePosX,
+      relativePosY,
+      WALDO_DATA
+    );
 
     if (isWaldoFound) {
       setIsCharacterFound(true);
