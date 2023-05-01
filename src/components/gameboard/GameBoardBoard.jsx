@@ -3,7 +3,6 @@ import React from 'react';
 const GameBoardBoard = ({
   isZoomEnabled,
   boardImg,
-  boardImgAlt,
   handleBoardImgZoom,
   handleBoardImgClick,
   magnifierGlassStyle,
@@ -13,7 +12,7 @@ const GameBoardBoard = ({
       {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
       <img
         src={boardImg}
-        alt={boardImgAlt}
+        alt="Game Board"
         id="whereiswaldo-img"
         onMouseMove={handleBoardImgZoom}
         onClick={handleBoardImgClick}
