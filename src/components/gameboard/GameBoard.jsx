@@ -6,7 +6,7 @@ import Wrapper from '../Wrapper';
 import GameBoardHeader from './GameBoardHeader';
 import GameBoardBoard from './GameBoardBoard';
 
-const GameBoard = ({ boardImg, boardImgAlt }) => {
+const GameBoard = ({ boardImg }) => {
   const [isZoomEnabled, setIsZoomEnabled] = useState(false);
   const [magnifierGlassStyle, setMagnifierGlassStyle] = useState({
     backgroundImage: `url(${boardImg})`,
@@ -65,7 +65,6 @@ const GameBoard = ({ boardImg, boardImgAlt }) => {
         <GameBoardBoard
           isZoomEnabled={isZoomEnabled}
           boardImg={boardImg}
-          boardImgAlt={boardImgAlt}
           handleBoardImgZoom={handleBoardImgZoom}
           handleBoardImgClick={handleBoardImgClick}
           magnifierGlassStyle={magnifierGlassStyle}
