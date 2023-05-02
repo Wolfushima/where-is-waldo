@@ -12,6 +12,7 @@ export default function Game() {
   const dispatch = useDispatch();
   const { data: levelCharacters, isLoading } =
     useFetchLevelCharactersQuery(level);
+  const GAMEBOARD_IMG = GAMEBOARD_IMAGE_LEVELS[level].src;
 
   useEffect(() => {
     if (levelCharacters && !isLoading) {
@@ -20,7 +21,6 @@ export default function Game() {
     }
   }, [levelCharacters]);
 
-  const GAMEBOARD_IMG = GAMEBOARD_IMAGE_LEVELS[level];
   if (isLoading) return <p>loading...</p>;
   if (storeLevels[level]) return <GameBoard boardImg={GAMEBOARD_IMG} />;
 }

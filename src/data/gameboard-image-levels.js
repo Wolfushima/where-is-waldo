@@ -6,12 +6,30 @@ import GameBoardImageLevel5 from '../assets/gameboard/gameboard-level-5.jpg';
 import GameBoardImageLevel6 from '../assets/gameboard/gameboard-level-6.jpg';
 
 const GAMEBOARD_IMAGE_LEVELS = {
-  LEVEL1: GameBoardImageLevel1,
-  LEVEL2: GameBoardImageLevel2,
-  LEVEL3: GameBoardImageLevel3,
-  LEVEL4: GameBoardImageLevel4,
-  LEVEL5: GameBoardImageLevel5,
-  LEVEL6: GameBoardImageLevel6,
+  LEVEL1: {
+    src: GameBoardImageLevel1,
+    level: 'Level 1',
+  },
+  LEVEL2: {
+    src: GameBoardImageLevel2,
+    level: 'Level 2',
+  },
+  LEVEL3: {
+    src: GameBoardImageLevel3,
+    level: 'Level 3',
+  },
+  LEVEL4: {
+    src: GameBoardImageLevel4,
+    level: 'Level 4',
+  },
+  LEVEL5: {
+    src: GameBoardImageLevel5,
+    level: 'Level 5',
+  },
+  LEVEL6: {
+    src: GameBoardImageLevel6,
+    level: 'Level 6',
+  },
 };
 
 export default GAMEBOARD_IMAGE_LEVELS;
