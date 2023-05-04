@@ -16,12 +16,15 @@ export const currentGameSlice = createSlice({
         {}
       );
       const CHARACTERS = levelData.map(({ CHARACTER_ID }) => CHARACTER_ID);
-      state[level] = {
-        CURRENT_LEVEL: level,
-        GAME_OVER: false,
-        CHARACTERS_STATUS,
-        CHARACTERS,
+      const NEW_GAME = {
+        [level]: {
+          CURRENT_LEVEL: level,
+          GAME_OVER: false,
+          CHARACTERS_STATUS,
+          CHARACTERS,
+        },
       };
+      return NEW_GAME;
     },
     setCharacterStatus: (state, action) => {
       const { level, character } = action.payload;
