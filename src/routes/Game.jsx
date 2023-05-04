@@ -25,7 +25,7 @@ export default function Game() {
   }, [levelCharacters]);
 
   if (isLoading) return <p>loading...</p>;
-  if (storeLevels[level]) {
+  if (storeLevels[level] && storeCurrentGame[level]) {
     return (
       <>
         <button
