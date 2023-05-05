@@ -22,6 +22,8 @@ export const currentGameSlice = createSlice({
           GAME_OVER: false,
           CHARACTERS_STATUS,
           CHARACTERS,
+          DATE: null,
+          SCORE: null,
         },
       };
       return NEW_GAME;
@@ -34,9 +36,22 @@ export const currentGameSlice = createSlice({
       const level = action.payload;
       state[level].GAME_OVER = true;
     },
+    setDate: (state, action) => {
+      const { level, date } = action.payload;
+      state[level].DATE = date;
+    },
+    setScore: (state, action) => {
+      const { level, score } = action.payload;
+      state[level].SCORE = score;
+    },
   },
 });
 
-export const { setNewGame, setCharacterStatus, setGameOver } =
-  currentGameSlice.actions;
+export const {
+  setNewGame,
+  setCharacterStatus,
+  setGameOver,
+  setDate,
+  setScore,
+} = currentGameSlice.actions;
 export default currentGameSlice.reducer;

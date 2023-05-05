@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { formatISO } from 'date-fns';
 import moveMagnifier from '../../utils/gameboard/move-magnifier';
 import getCursorPos from '../../utils/gameboard/get-cursor-pos';
 import Wrapper from '../Wrapper';
@@ -8,7 +9,9 @@ import GameBoardBoard from './GameBoardBoard';
 import {
   setCharacterStatus,
   setGameOver,
+  setDate,
 } from '../../slices/gameboard/currentGameSlice';
+import GameBoardTimer from './GameBoardTimer';
 
 const GameBoard = ({ boardImg, level }) => {
   const [isZoomEnabled, setIsZoomEnabled] = useState(false);
@@ -23,6 +26,7 @@ const GameBoard = ({ boardImg, level }) => {
     (state) => state.currentGame[level]
   );
   const dispatch = useDispatch();
+  const [startGame, setStartGame] = useState(false);
 
   const handleBoardImgZoom = (e) => {
     if (isZoomEnabled) {
@@ -62,6 +66,11 @@ const GameBoard = ({ boardImg, level }) => {
     setIsZoomEnabled(!isZoomEnabled);
   };
 
+  const handleStart = () => {
+    dispatch(setDate({ level, date: formatISO(new Date()) }));
+    setStartGame(true);
+  };
+
   useEffect(() => {
     const allCharactersFound = Object.values(CHARACTERS_STATUS).every(
       (character) => character.isFound
@@ -75,17 +84,25 @@ const GameBoard = ({ boardImg, level }) => {
   return (
     <section id="gameboard" className="gameboard">
       <Wrapper className="gameboard">
-        <GameBoardHeader
-          isCharacterFound={isCharacterFound}
-          toggleBoardImgZoom={toggleBoardImgZoom}
-        />
-        <GameBoardBoard
-          isZoomEnabled={isZoomEnabled}
-          boardImg={boardImg}
-          handleBoardImgZoom={handleBoardImgZoom}
-          handleBoardImgClick={handleBoardImgClick}
-          magnifierGlassStyle={magnifierGlassStyle}
-        />
+        <button type="button" onClick={handleStart}>
+          Start Game
+        </button>
+        {startGame && (
+          <>
+            <GameBoardTimer level={level} />
+            <GameBoardHeader
+              isCharacterFound={isCharacterFound}
+              toggleBoardImgZoom={toggleBoardImgZoom}
+            />
+            <GameBoardBoard
+              isZoomEnabled={isZoomEnabled}
+              boardImg={boardImg}
+              handleBoardImgZoom={handleBoardImgZoom}
+              handleBoardImgClick={handleBoardImgClick}
+              magnifierGlassStyle={magnifierGlassStyle}
+            />
+          </>
+        )}
       </Wrapper>
     </section>
   );
