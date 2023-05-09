@@ -12,6 +12,7 @@ import {
   setDate,
 } from '../../slices/gameboard/currentGameSlice';
 import GameBoardTimer from './GameBoardTimer';
+import GameBoardOverview from './GameBoardOverview';
 
 const GameBoard = ({ boardImg, level }) => {
   const [isZoomEnabled, setIsZoomEnabled] = useState(false);
@@ -67,6 +68,7 @@ const GameBoard = ({ boardImg, level }) => {
   };
 
   const handleStart = () => {
+    if (startGame) return;
     dispatch(setDate({ level, date: formatISO(new Date()) }));
     setStartGame(true);
   };
@@ -84,9 +86,7 @@ const GameBoard = ({ boardImg, level }) => {
   return (
     <section id="gameboard" className="gameboard">
       <Wrapper className="gameboard">
-        <button type="button" onClick={handleStart}>
-          Start Game
-        </button>
+        {!startGame && <GameBoardOverview handleStart={handleStart} />}
         {startGame && (
           <>
             <GameBoardTimer level={level} />
