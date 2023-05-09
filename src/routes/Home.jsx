@@ -9,8 +9,8 @@ export default function Home() {
       <Wrapper className="home">
         <section className="home__game-description">
           <h2>
-            Welcome to &quot;Where&apos;s Waldo?&quot; - the photo tagging game
-            that will test your observation skills!
+            &ldquo;Welcome to &quot;Where&apos;s Waldo?&quot; - the photo
+            tagging game that will test your observation skills!&rdquo;
           </h2>
           <p className="bold">Objective and Gameplay</p>
           <p>
