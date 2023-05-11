@@ -25,3 +25,28 @@ $breakpoints-down: (
         @content;
     }
 }
+
+//BUTTON
+@mixin button($bg) {
+  background: $bg;
+  font-size: $font-med;
+  font-family: $font-family-sans;
+  padding: 0.7rem 1.4rem;
+  cursor: pointer;
+  color: $bg-white;
+  text-align: center;
+  font-weight: 900;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  transition: all .1s ease;
+  @include breakpoint-down(medium) {
+    font-size: $font-sm;
+  }
+  &:hover {
+    box-shadow: 0 0 0 0 #fff, 0 0 0 3px $bg;
+  }
+  &:active {
+    box-shadow: none;
+  }
+}

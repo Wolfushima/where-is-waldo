@@ -21,7 +21,7 @@ const GameBoardTimer = ({ level }) => {
     return () => clearInterval(interval);
   }, [GAME_OVER]);
 
-  return <p>Timer: {timeElapsed}</p>;
+  return <span>{timeElapsed}</span>;
 };
 
 export default GameBoardTimer;

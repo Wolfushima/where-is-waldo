@@ -4,15 +4,14 @@ import { formatISO } from 'date-fns';
 import moveMagnifier from '../../utils/gameboard/move-magnifier';
 import getCursorPos from '../../utils/gameboard/get-cursor-pos';
 import Wrapper from '../Wrapper';
-import GameBoardHeader from './GameBoardHeader';
 import GameBoardBoard from './GameBoardBoard';
 import {
   setCharacterStatus,
   setGameOver,
   setDate,
 } from '../../slices/gameboard/currentGameSlice';
-import GameBoardTimer from './GameBoardTimer';
 import GameBoardOverview from './GameBoardOverview';
+import GameBoardFooter from './GameBoardFooter';
 
 const GameBoard = ({ boardImg, level }) => {
   const [isZoomEnabled, setIsZoomEnabled] = useState(false);
@@ -89,17 +88,17 @@ const GameBoard = ({ boardImg, level }) => {
         {!startGame && <GameBoardOverview handleStart={handleStart} />}
         {startGame && (
           <>
-            <GameBoardTimer level={level} />
-            <GameBoardHeader
-              isCharacterFound={isCharacterFound}
-              toggleBoardImgZoom={toggleBoardImgZoom}
-            />
             <GameBoardBoard
               isZoomEnabled={isZoomEnabled}
               boardImg={boardImg}
               handleBoardImgZoom={handleBoardImgZoom}
               handleBoardImgClick={handleBoardImgClick}
               magnifierGlassStyle={magnifierGlassStyle}
+            />
+            <GameBoardFooter
+              isCharacterFound={isCharacterFound}
+              toggleBoardImgZoom={toggleBoardImgZoom}
+              level={level}
             />
           </>
         )}
