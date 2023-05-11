@@ -16,6 +16,9 @@
     margin-bottom: calc(100px - 2rem);
     border-top: 1px solid $grey-border;
     border-bottom: 1px solid $grey-border;
+    @include breakpoint-down(small) {
+      margin-bottom: calc(200px - 2rem);
+    }
   }
   &__board-img {
     img {
@@ -25,13 +28,13 @@
     }
   }
   &__board-img.zoom {
-    width: 50%;
+    width: 70%;
   }
   &__magnifier-glass {
     cursor: none;
     background-repeat: no-repeat;
     height: auto;
-    width: 50%;
+    width: 30%;
     position: relative;
     // 4 is the zoom strength
     background-size: calc(100%*4) calc(100%*4);
@@ -42,6 +45,9 @@
     gap: 5px;
     justify-content: center;
     align-items: center;
+    @include breakpoint-down(small) {
+      margin-bottom: 1rem;
+    }
   }
   &__character {
     height: 63px;
@@ -61,6 +67,14 @@
       width: 70px;
       min-width: 70px;
       max-width: 70px;
+    }
+    @include breakpoint-down(small) {
+      height: 43px;
+      min-height: 43px;
+      max-height: 43px;
+      width: 60px;
+      min-width: 60px;
+      max-width: 60px;
     }
     img {
       width: 100%;
@@ -83,11 +97,26 @@
     bottom: 0;
     background: $red;
     height: 100px;
+    min-height: 100px;
+    max-height: 100px;
+    min-width: 320px;
+    @include breakpoint-down(small) {
+      height: 200px;
+      min-height: 200px;
+      max-height: 200px;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(3, auto);
+      padding: 1.5rem;
+      gap: 0;
+    }
   }
   &__magnifier-button {
     @include button($bg-white);
     justify-self: end;
     color: $red;
+    @include breakpoint-down(small) {
+      justify-self: center;
+    }
   }
   &__overview {
     display: flex;
@@ -95,6 +124,10 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
+    padding: 2rem;
+    p, p.italic {
+      text-align: center;
+    }
     p {
       font-family: $font-family-serif;
       color: $black-text;
@@ -105,6 +138,7 @@
       font-style: italic;
       font-size: $font-xsm;
       letter-spacing: 0px;
+      color: $light-grey-text;
     }
     button {
       margin-top: 1rem;
@@ -119,19 +153,24 @@
     gap: 1rem;
     :first-child {
       font-weight: 900;
-      letter-spacing: 1px;
     }
     p, span {
       font-family: $font-family-sans;
       font-size: $font-lg;
       color: $bg-white;
-    }
-    span {
       letter-spacing: 3px;
     }
     @include breakpoint-down(medium) {
       p, span {
         font-size: $font-med;
+      }
+    }
+    @include breakpoint-down(small) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      width: 100%;
+      p {
+        justify-self: end;
       }
     }
   }
