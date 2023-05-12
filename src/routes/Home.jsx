@@ -29,6 +29,9 @@ export default function Home() {
             level.
           </p>
         </section>
+        <section className="home__leaderboard">
+          <Link to="leaderboard">VIEW LEADERBOARD</Link>
+        </section>
         <section className="home__game-levels">
           {Object.entries(GAMEBOARD_IMAGE_LEVELS).map(([key, value]) => {
             return (

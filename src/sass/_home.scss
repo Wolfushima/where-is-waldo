@@ -97,4 +97,38 @@
       border-radius: 10px;
     }
   }
+  &__leaderboard {
+    width: 70%;
+    margin: 0 auto;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: #942317;
+    background-image: linear-gradient(0deg, #942317 50%, $blue 50%);
+    background-size: 10px 1px;
+    transition: all .1s ease;
+    @include breakpoint-down(x-small) {
+      width: 100%;
+    }
+    a {
+      font-size: $font-lg;
+      font-family: $font-family-sans;
+      text-decoration: none;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      background: #000000a8;
+      font-weight: 900;
+      color: $bg-white;
+      text-align: center;
+      letter-spacing: 5px;
+      padding: 1rem 2.5rem;
+      display: inline-block;
+      @include breakpoint-down(small) {
+        font-size: $font-med;
+      }
+    }
+    &:hover {
+      box-shadow: 0 0 0 0px $bg-white, 0 0 0 3px #000000a8;
+    }
+  }
 }
