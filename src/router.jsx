@@ -4,6 +4,7 @@ import Root from './routes/root';
 import ErrorPage from './routes/error-page';
 import Home from './routes/Home';
 import Game from './routes/Game';
+import Leaderboard from './routes/Leaderboard';
 
 const router = createHashRouter([
   {
@@ -18,6 +19,10 @@ const router = createHashRouter([
       {
         path: 'game/:level',
         element: <Game />,
+      },
+      {
+        path: 'leaderboard',
+        element: <Leaderboard />,
       },
     ],
   },
