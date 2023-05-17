@@ -12,6 +12,7 @@ import {
 } from '../../slices/gameboard/currentGameSlice';
 import GameBoardOverview from './GameBoardOverview';
 import GameBoardFooter from './GameBoardFooter';
+import GameBoardModal from './GameBoardModal';
 
 const GameBoard = ({ boardImg, level }) => {
   const [isZoomEnabled, setIsZoomEnabled] = useState(false);
@@ -22,7 +23,7 @@ const GameBoard = ({ boardImg, level }) => {
   const { CHARACTERS_POSITION_BOUNDS } = useSelector(
     (state) => state.levels[level]
   );
-  const { CHARACTERS_STATUS, CHARACTERS } = useSelector(
+  const { CHARACTERS_STATUS, CHARACTERS, GAME_OVER } = useSelector(
     (state) => state.currentGame[level]
   );
   const dispatch = useDispatch();
@@ -102,6 +103,7 @@ const GameBoard = ({ boardImg, level }) => {
             />
           </>
         )}
+        {GAME_OVER && <GameBoardModal />}
       </Wrapper>
     </section>
   );
