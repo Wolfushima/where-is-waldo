@@ -206,7 +206,7 @@
         text-align: center;
         letter-spacing: 1px;
       }
-      p {
+      h2 {
         margin-bottom: 2rem;
         font-weight: 100;
         text-align: center;
@@ -215,21 +215,22 @@
         font-size: $font-med;
         letter-spacing: 1px;
       }
-      span {
+      p {
         color: #434343;
         font-family: $font-family-serif;
         font-size: $font-xsm;
         font-style: italic;
+        text-align: justify;
       }
       @include breakpoint-down(small) {
         padding: 1rem;
         h1 {
           font-size: $font-med;
         }
-        p {
+        h2 {
           font-size: $font-sm;
         }
-        span {
+        p {
           font-size: $font-xsm;
         }
       }

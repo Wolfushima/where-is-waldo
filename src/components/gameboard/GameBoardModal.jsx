@@ -10,10 +10,8 @@ export default function GameBoardModal() {
       <div className="gameboard__modal-content">
         <header>
           <h1>CONGRATULATIONS!</h1>
-          <p>You found Waldo and his friends!</p>
-          <span>
-            Enter your username to submit your score to the leaderboard.
-          </span>
+          <h2>You found Waldo and his friends!</h2>
+          <p>Enter your username to submit your score to the leaderboard.</p>
         </header>
         <form onSubmit={handleFormSubmit}>
           <label htmlFor="username">
