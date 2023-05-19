@@ -1,5 +1,11 @@
 import { createApi, fakeBaseQuery } from '@reduxjs/toolkit/query/react';
-import { collectionGroup, getFirestore, getDocs } from 'firebase/firestore';
+import {
+  collectionGroup,
+  getFirestore,
+  getDocs,
+  addDoc,
+  collection,
+} from 'firebase/firestore';
 import firebaseApp from './firebase-config';
 
 const firestoreDatabase = getFirestore(firebaseApp);
@@ -25,7 +31,29 @@ export const firestoreApi = createApi({
       },
       providesTags: ['Firestore'],
     }),
+    updateLevelLeaderboard: builder.mutation({
+      async queryFn({ level = 'LEVEL1', USERNAME, SCORE }) {
+        try {
+          const leaderboardRef = collection(
+            firestoreDatabase,
+            `LEVELS/${level}/LEADERBOARD_${level}`
+          );
+          await addDoc(leaderboardRef, {
+            USERNAME,
+            SCORE,
+          });
+          return { data: null };
+        } catch (error) {
+          console.error(error.message);
+          return { error: error.message };
+        }
+      },
+      invalidatesTags: ['Firestore'],
+    }),
   }),
 });
 
-export const { useFetchLevelCharactersQuery } = firestoreApi;
+export const {
+  useFetchLevelCharactersQuery,
+  useUpdateLevelLeaderboardMutation,
+} = firestoreApi;

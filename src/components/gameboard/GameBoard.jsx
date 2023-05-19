@@ -103,7 +103,7 @@ const GameBoard = ({ boardImg, level }) => {
             />
           </>
         )}
-        {GAME_OVER && <GameBoardModal />}
+        {GAME_OVER && <GameBoardModal level={level} />}
       </Wrapper>
     </section>
   );
