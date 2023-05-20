@@ -21,7 +21,7 @@ const router = createHashRouter([
         element: <Game />,
       },
       {
-        path: 'leaderboard',
+        path: 'leaderboard/:currentLevel',
         element: <Leaderboard />,
       },
     ],

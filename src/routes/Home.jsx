@@ -30,7 +30,7 @@ export default function Home() {
           </p>
         </section>
         <section className="home__leaderboard">
-          <Link to="leaderboard">VIEW LEADERBOARD</Link>
+          <Link to="leaderboard/LEVEL1">VIEW LEADERBOARD</Link>
         </section>
         <section className="home__game-levels">
           {Object.entries(GAMEBOARD_IMAGE_LEVELS).map(([key, value]) => {
