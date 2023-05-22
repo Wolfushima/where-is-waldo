@@ -21,7 +21,7 @@ export default function GameBoardModal({ level }) {
 
   useEffect(() => {
     if (isSuccess) {
-      navigate('/leaderboard/');
+      navigate(`/leaderboard/${level}`);
     }
   }, [isSuccess]);
 
