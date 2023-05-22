@@ -1,13 +1,24 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import Wrapper from '../components/Wrapper';
 import GAMEBOARD_IMAGE_LEVELS from '../data/gameboard-image-levels';
+import { useFetchLevelLeaderboardQuery } from '../services/firebase/firestoreApi';
+import LeaderboardTable from '../components/leaderboard/LeaderboardTable';
 
 export default function Leaderboard() {
-  const [activeLevel, setActiveLevel] = useState('Level 1');
+  const { currentLevel } = useParams();
+  const navigate = useNavigate();
+  const [activeLevel, setActiveLevel] = useState(currentLevel);
+  const { data: leaderboardData, isLoading } =
+    useFetchLevelLeaderboardQuery(currentLevel);
 
   const handleActiveLevel = (level) => {
     setActiveLevel(level);
   };
+
+  useEffect(() => {
+    navigate(`/leaderboard/${activeLevel}`);
+  }, [activeLevel]);
 
   return (
     <div id="leaderboard" className="leaderboard">
@@ -27,45 +38,18 @@ export default function Leaderboard() {
                 type="button"
               >
                 <p>{value.levelNumber}</p>
-                <img src={value.src} alt={value.level} />
+                <img src={value.src} alt={value.levelName} />
               </button>
             );
           })}
         </section>
-        <table className="leaderboard__leaderboard-table">
-          <thead>
-            <tr className="tr-active-level">
-              <th colSpan={3}>{activeLevel}</th>
-            </tr>
-            <tr className="tr-headers">
-              <th>Rank</th>
-              <th>Username</th>
-              <th>Score</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>RandomUsername1</td>
-              <td>10.10</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>RandomUsername2</td>
-              <td>9.10</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>RandomUsername3</td>
-              <td>8.10</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>RandomUsername4</td>
-              <td>7.10</td>
-            </tr>
-          </tbody>
-        </table>
+        {isLoading && <p>loading...</p>}
+        {leaderboardData && (
+          <LeaderboardTable
+            activeLevel={activeLevel}
+            leaderboardData={leaderboardData}
+          />
+        )}
       </Wrapper>
     </div>
   );

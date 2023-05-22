@@ -5,6 +5,8 @@ import {
   getDocs,
   addDoc,
   collection,
+  query,
+  orderBy,
 } from 'firebase/firestore';
 import firebaseApp from './firebase-config';
 
@@ -50,10 +52,33 @@ export const firestoreApi = createApi({
       },
       invalidatesTags: ['Firestore'],
     }),
+    fetchLevelLeaderboard: builder.query({
+      async queryFn(level) {
+        try {
+          const ref = collection(
+            firestoreDatabase,
+            `LEVELS/${level}/LEADERBOARD_${level}`
+          );
+          const q = query(ref, orderBy('SCORE'));
+          const querySnapshot = await getDocs(q);
+          const leaderboard = [];
+          querySnapshot?.forEach((doc) => {
+            leaderboard.push(doc.data());
+          });
+          return { data: leaderboard };
+        } catch (error) {
+          console.error(error.message);
+          console.log('why');
+          return { error: error.message };
+        }
+      },
+      providesTags: ['Firestore'],
+    }),
   }),
 });
 
 export const {
   useFetchLevelCharactersQuery,
   useUpdateLevelLeaderboardMutation,
+  useFetchLevelLeaderboardQuery,
 } = firestoreApi;
