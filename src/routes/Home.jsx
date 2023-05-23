@@ -33,10 +33,15 @@ export default function Home() {
           <Link to="leaderboard/LEVEL1">VIEW LEADERBOARD</Link>
         </section>
         <section className="home__game-levels">
-          {Object.entries(GAMEBOARD_IMAGE_LEVELS).map(([key, value]) => {
+          <h3>PLAY</h3>
+          {Object.entries(GAMEBOARD_IMAGE_LEVELS).map(([key, value], index) => {
             return (
-              <Link to={`game/${key}`} className="home__game-level">
-                <p>{value.level}</p>
+              <Link
+                to={`game/${key}`}
+                className="home__game-level"
+                key={`gameboard${index}`}
+              >
+                <p>{value.levelName}</p>
                 <div className="home__game-img">
                   <img src={value.src} alt="Gameboard" />
                 </div>
