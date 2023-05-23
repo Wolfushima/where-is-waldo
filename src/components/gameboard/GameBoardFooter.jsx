@@ -3,7 +3,7 @@ import GameBoardCharacter from './GameBoardCharacter';
 import CHARACTERS from '../../data/characters';
 import GameBoardTimer from './GameBoardTimer';
 
-const GameBoardFooter = ({ level, toggleBoardImgZoom, isCharacterFound }) => (
+const GameBoardFooter = ({ level, toggleBoardImgZoom }) => (
   <div className="gameboard__footer">
     <div className="gameboard__timer">
       <p>SCORE</p>
@@ -14,7 +14,8 @@ const GameBoardFooter = ({ level, toggleBoardImgZoom, isCharacterFound }) => (
         <GameBoardCharacter
           characterSrc={character.src}
           characterAlt={character.alt}
-          characterStatus={isCharacterFound}
+          characterId={character.id}
+          level={level}
           key={character.alt}
         />
       ))}

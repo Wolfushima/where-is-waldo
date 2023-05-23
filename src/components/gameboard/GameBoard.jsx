@@ -19,7 +19,6 @@ const GameBoard = ({ boardImg, level }) => {
   const [magnifierGlassStyle, setMagnifierGlassStyle] = useState({
     backgroundImage: `url(${boardImg})`,
   });
-  const [isCharacterFound, setIsCharacterFound] = useState(false);
   const { CHARACTERS_POSITION_BOUNDS } = useSelector(
     (state) => state.levels[level]
   );
@@ -50,7 +49,6 @@ const GameBoard = ({ boardImg, level }) => {
         posY > characterData.yTop &&
         posY < characterData.yBottom;
       if (isFound && !CHARACTERS_STATUS[characterName].isFound) {
-        setIsCharacterFound(true);
         dispatch(setCharacterStatus({ level, character: characterName }));
         console.log(`You found ${characterName}!`);
       }
@@ -97,7 +95,6 @@ const GameBoard = ({ boardImg, level }) => {
               magnifierGlassStyle={magnifierGlassStyle}
             />
             <GameBoardFooter
-              isCharacterFound={isCharacterFound}
               toggleBoardImgZoom={toggleBoardImgZoom}
               level={level}
             />
