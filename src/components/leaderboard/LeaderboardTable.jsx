@@ -11,6 +11,11 @@ export default function LeaderboardTable({ activeLevel, leaderboardData }) {
 
   return (
     <table className="leaderboard__leaderboard-table">
+      <colgroup>
+        <col />
+        <col />
+        <col />
+      </colgroup>
       <thead>
         <tr className="tr-active-level">
           <th colSpan={3}>{`LEVEL ${tableHeaderNumber}`}</th>
