@@ -281,7 +281,7 @@
   }
   .targeting-box {
     position: absolute;
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
