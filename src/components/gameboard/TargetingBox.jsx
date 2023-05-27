@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCharacterStatus } from '../../slices/gameboard/currentGameSlice';
 
@@ -14,6 +14,7 @@ export default function TargetingBox({
   const { CHARACTERS_STATUS, CHARACTERS } = useSelector(
     (state) => state.currentGame[level]
   );
+  const [wrongCharacterClicked, setWrongCharacterClicked] = useState('');
   const dispatch = useDispatch();
 
   const closeTargetingBox = () => setIsTargetingBoxActive(false);
@@ -30,7 +31,7 @@ export default function TargetingBox({
       if (isFound && !CHARACTERS_STATUS[characterName].isFound) {
         dispatch(setCharacterStatus({ level, character: characterName }));
         console.log(`You found ${characterName}!`);
-      }
+      } else setWrongCharacterClicked(character);
     };
 
     isCharacterLocated(relativePosX, relativePosY, character);
@@ -43,9 +44,19 @@ export default function TargetingBox({
           <button
             type="button"
             onClick={() => handleSelectedCharacter(character)}
-            className={
-              CHARACTERS_STATUS[character].isFound ? 'targeting-box__found' : ''
-            }
+            className={`
+              ${
+                CHARACTERS_STATUS[character].isFound
+                  ? 'targeting-box__found'
+                  : ''
+              }
+              ${
+                wrongCharacterClicked.includes(character)
+                  ? 'targeting-box__wrong'
+                  : ''
+              }
+            `}
+            onAnimationEnd={() => setWrongCharacterClicked('')}
           >
             {character.split('_')[0].toLowerCase()}
           </button>
