@@ -1,4 +1,5 @@
 .gameboard {
+  user-select: none;
   min-height: calc(100svh - 80px);
   background: $bg-white;
   display: flex;
@@ -289,6 +290,7 @@
     left: 70px;
     list-style: none;
     box-shadow: 0 0 10px black;
+    background: #0000007d;
     width: 90px;
     min-width: 90px;
     max-width: 90px;
@@ -337,6 +339,32 @@
         color: #797777;
         text-decoration: line-through;
         text-decoration-thickness: 1px;
+      }
+      .targeting-box__wrong {
+        animation-duration: 0.3s;
+        animation-name: wrong;
+        animation-iteration-count: 2;
+        animation-direction: normal;
+        animation-timing-function: ease-in-out;
+        pointer-events: none;
+        background: #982317;
+      }
+      @keyframes wrong {
+        0% {
+          transform: translateX(0%);
+        }
+        25% {
+          transform: translateX(-5%);
+        }
+        50% {
+          transform: translateX(0%);
+        }
+        75% {
+          transform: translateX(5%);
+        }
+        100% {
+          transform: translateX(0%);
+        }
       }
     }
   }
