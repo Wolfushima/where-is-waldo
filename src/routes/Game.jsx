@@ -5,7 +5,10 @@ import GameBoard from '../components/gameboard/GameBoard';
 import GAMEBOARD_IMAGE_LEVELS from '../data/gameboard-image-levels';
 import { useFetchLevelCharactersQuery } from '../services/firebase/firestoreApi';
 import { setLevelData } from '../slices/gameboard/levelsSlice';
-import { setNewGame } from '../slices/gameboard/currentGameSlice';
+import {
+  setNewGame,
+  resetGameToInitialState,
+} from '../slices/gameboard/currentGameSlice';
 
 export default function Game() {
   const { level } = useParams();
@@ -24,21 +27,12 @@ export default function Game() {
     }
   }, [levelCharacters]);
 
+  useEffect(() => {
+    return () => dispatch(resetGameToInitialState());
+  }, []);
+
   if (isLoading) return <p>loading...</p>;
   if (storeLevels[level] && storeCurrentGame[level]) {
-    return (
-      <>
-        <button
-          type="button"
-          onClick={() => {
-            console.log(storeLevels);
-            console.log(storeCurrentGame);
-          }}
-        >
-          console store
-        </button>
-        <GameBoard boardImg={GAMEBOARD_IMG} level={level} />
-      </>
-    );
+    return <GameBoard boardImg={GAMEBOARD_IMG} level={level} />;
   }
 }

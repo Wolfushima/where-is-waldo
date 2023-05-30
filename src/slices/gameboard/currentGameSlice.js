@@ -44,6 +44,9 @@ export const currentGameSlice = createSlice({
       const { level, score } = action.payload;
       state[level].SCORE = score;
     },
+    resetGameToInitialState: () => {
+      return {};
+    },
   },
 });
 
@@ -53,5 +56,6 @@ export const {
   setGameOver,
   setDate,
   setScore,
+  resetGameToInitialState,
 } = currentGameSlice.actions;
 export default currentGameSlice.reducer;
