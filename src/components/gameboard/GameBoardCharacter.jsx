@@ -18,6 +18,7 @@ const GameBoardCharacter = ({
       }`}
     >
       <img src={characterSrc} alt={characterAlt} />
+      <p>{characterAlt}</p>
     </div>
   );
 };
