@@ -61,6 +61,8 @@
     border: 1px solid $grey-border;
     padding: 5px;
     background: $bg-white;
+    position: relative;
+    transition: all .1s ease;
     @include breakpoint-down(medium) {
       height: 53px;
       min-height: 53px;
@@ -82,10 +84,29 @@
       height: 100%;
       object-fit: contain;
     }
+    p {
+      font-family: $font-family-sans;
+      font-size: $font-xsm;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: $red;
+      background: $bg-white;
+      border-radius: 0.2rem;
+      font-weight: 900;
+      text-align: center;
+      box-shadow: 0 0 4px black;
+      width: calc(100% - 10px);
+    }
   }
   &__character.found {
     filter: grayscale(100%);
     background: #5b5b5b;
+    p {
+      text-decoration: line-through;
+      text-decoration-thickness: 1px;
+    }
   }
   &__footer {
     display: grid;
