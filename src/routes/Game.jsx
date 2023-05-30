@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import GameBoard from '../components/gameboard/GameBoard';
@@ -9,6 +9,7 @@ import {
   setNewGame,
   resetGameToInitialState,
 } from '../slices/gameboard/currentGameSlice';
+import LoadingGameData from '../components/game/LoadingGameData';
 
 export default function Game() {
   const { level } = useParams();
@@ -18,12 +19,18 @@ export default function Game() {
     useFetchLevelCharactersQuery(level);
   const GAMEBOARD_IMG = GAMEBOARD_IMAGE_LEVELS[level].src;
   const storeCurrentGame = useSelector((state) => state.currentGame);
+  const [showLoader, setShowLoader] = useState(true);
 
   useEffect(() => {
     if (levelCharacters && !isLoading) {
       const levelData = { level, levelData: levelCharacters };
+      const timeout = setTimeout(() => {
+        setShowLoader(false);
+      }, 2000);
       dispatch(setLevelData(levelData));
       dispatch(setNewGame(levelData));
+
+      return () => clearTimeout(timeout);
     }
   }, [levelCharacters]);
 
@@ -31,7 +38,7 @@ export default function Game() {
     return () => dispatch(resetGameToInitialState());
   }, []);
 
-  if (isLoading) return <p>loading...</p>;
+  if (showLoader) return <LoadingGameData />;
   if (storeLevels[level] && storeCurrentGame[level]) {
     return <GameBoard boardImg={GAMEBOARD_IMG} level={level} />;
   }
