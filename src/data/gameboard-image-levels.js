@@ -1,9 +1,9 @@
-import GameBoardImageLevel1 from '../assets/gameboard/gameboard-level-1.jpg';
-import GameBoardImageLevel2 from '../assets/gameboard/gameboard-level-2.jpg';
-import GameBoardImageLevel3 from '../assets/gameboard/gameboard-level-3.jpg';
-import GameBoardImageLevel4 from '../assets/gameboard/gameboard-level-4.jpg';
-import GameBoardImageLevel5 from '../assets/gameboard/gameboard-level-5.jpg';
-import GameBoardImageLevel6 from '../assets/gameboard/gameboard-level-6.jpg';
+import GameBoardImageLevel1 from '../assets/gameboard/gameboard-level-1.webp';
+import GameBoardImageLevel2 from '../assets/gameboard/gameboard-level-2.webp';
+import GameBoardImageLevel3 from '../assets/gameboard/gameboard-level-3.webp';
+import GameBoardImageLevel4 from '../assets/gameboard/gameboard-level-4.webp';
+import GameBoardImageLevel5 from '../assets/gameboard/gameboard-level-5.webp';
+import GameBoardImageLevel6 from '../assets/gameboard/gameboard-level-6.webp';
 
 const GAMEBOARD_IMAGE_LEVELS = {
   LEVEL1: {

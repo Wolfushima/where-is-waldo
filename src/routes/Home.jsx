@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Wrapper from '../components/Wrapper';
-import GAMEBOARD_IMAGE_LEVELS from '../data/gameboard-image-levels';
+import HOME_IMAGE_LEVELS from '../data/home-image-levels';
 
 export default function Home() {
   return (
@@ -34,7 +34,7 @@ export default function Home() {
         </section>
         <section className="home__game-levels">
           <h3>PLAY</h3>
-          {Object.entries(GAMEBOARD_IMAGE_LEVELS).map(([key, value], index) => {
+          {Object.entries(HOME_IMAGE_LEVELS).map(([key, value], index) => {
             return (
               <Link
                 to={`game/${key}`}

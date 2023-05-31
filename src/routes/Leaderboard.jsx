@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Wrapper from '../components/Wrapper';
-import GAMEBOARD_IMAGE_LEVELS from '../data/gameboard-image-levels';
+import HOME_IMAGE_LEVELS from '../data/home-image-levels';
 import { useFetchLevelLeaderboardQuery } from '../services/firebase/firestoreApi';
 import LeaderboardTable from '../components/leaderboard/LeaderboardTable';
 import LeaderboardImageButton from '../components/leaderboard/LeaderboardImageButton';
@@ -22,7 +22,7 @@ export default function Leaderboard() {
       <Wrapper className="leaderboard">
         <h2 className="leaderboard__header">LEADERBOARD</h2>
         <section className="leaderboard__levels">
-          {Object.values(GAMEBOARD_IMAGE_LEVELS).map((image) => (
+          {Object.values(HOME_IMAGE_LEVELS).map((image) => (
             <LeaderboardImageButton
               activeLevel={activeLevel}
               setActiveLevel={setActiveLevel}
