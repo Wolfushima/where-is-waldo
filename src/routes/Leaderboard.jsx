@@ -4,6 +4,7 @@ import Wrapper from '../components/Wrapper';
 import GAMEBOARD_IMAGE_LEVELS from '../data/gameboard-image-levels';
 import { useFetchLevelLeaderboardQuery } from '../services/firebase/firestoreApi';
 import LeaderboardTable from '../components/leaderboard/LeaderboardTable';
+import LeaderboardImageButton from '../components/leaderboard/LeaderboardImageButton';
 
 export default function Leaderboard() {
   const { currentLevel } = useParams();
@@ -11,10 +12,6 @@ export default function Leaderboard() {
   const [activeLevel, setActiveLevel] = useState(currentLevel);
   const { data: leaderboardData, isLoading } =
     useFetchLevelLeaderboardQuery(currentLevel);
-
-  const handleActiveLevel = (level) => {
-    setActiveLevel(level);
-  };
 
   useEffect(() => {
     navigate(`/leaderboard/${activeLevel}`);
@@ -25,23 +22,14 @@ export default function Leaderboard() {
       <Wrapper className="leaderboard">
         <h2 className="leaderboard__header">LEADERBOARD</h2>
         <section className="leaderboard__levels">
-          {Object.values(GAMEBOARD_IMAGE_LEVELS).map((value) => {
-            return (
-              <button
-                className={
-                  activeLevel === value.level
-                    ? 'leaderboard__level active'
-                    : 'leaderboard__level'
-                }
-                key={value.level}
-                onClick={() => handleActiveLevel(value.level)}
-                type="button"
-              >
-                <p>{value.levelNumber}</p>
-                <img src={value.src} alt={value.levelName} />
-              </button>
-            );
-          })}
+          {Object.values(GAMEBOARD_IMAGE_LEVELS).map((image) => (
+            <LeaderboardImageButton
+              activeLevel={activeLevel}
+              setActiveLevel={setActiveLevel}
+              image={image}
+              key={image.level}
+            />
+          ))}
         </section>
         {isLoading && <p>loading...</p>}
         {leaderboardData && (
