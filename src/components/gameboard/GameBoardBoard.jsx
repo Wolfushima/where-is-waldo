@@ -84,6 +84,7 @@ const GameBoardBoard = ({ isZoomEnabled, boardImg, level }) => {
           alt="Game Board"
           id="whereiswaldo-img"
           onMouseMove={handleBoardImgZoom}
+          onTouchMove={handleBoardImgZoom}
           onClick={handleBoardImgClick}
         />
         {isTargetingBoxActive && (
