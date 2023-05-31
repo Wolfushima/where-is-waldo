@@ -14,7 +14,7 @@ const GameBoardCharacter = ({
   return (
     <div
       className={`gameboard__character ${
-        CHARACTERS_STATUS[characterId + level].isFound ? 'found' : null
+        CHARACTERS_STATUS[characterId + level].isFound ? 'found' : ''
       }`}
     >
       <img src={characterSrc} alt={characterAlt} />
