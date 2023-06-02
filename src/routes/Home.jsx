@@ -3,6 +3,7 @@ import Wrapper from '../components/Wrapper';
 import HomeGameDescription from '../components/home/HomeGameDescription';
 import HomeLeaderboard from '../components/home/HomeLeaderboard';
 import HomeGameLevels from '../components/home/HomeGameLevels';
+import Footer from '../components/Footer';
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
         <HomeLeaderboard />
         <HomeGameLevels />
       </Wrapper>
+      <Footer />
     </div>
   );
 }
