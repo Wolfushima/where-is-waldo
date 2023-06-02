@@ -5,6 +5,7 @@ import HOME_IMAGE_LEVELS from '../data/home-image-levels';
 import { useFetchLevelLeaderboardQuery } from '../services/firebase/firestoreApi';
 import LeaderboardTable from '../components/leaderboard/LeaderboardTable';
 import LeaderboardImageButton from '../components/leaderboard/LeaderboardImageButton';
+import Footer from '../components/Footer';
 
 export default function Leaderboard() {
   const { currentLevel } = useParams();
@@ -39,6 +40,7 @@ export default function Leaderboard() {
           />
         )}
       </Wrapper>
+      <Footer />
     </div>
   );
 }
