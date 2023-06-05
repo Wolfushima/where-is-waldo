@@ -4,8 +4,8 @@ export default function HomeGameDescription() {
   return (
     <section className="home__game-description">
       <h2>
-        &ldquo;Welcome to &quot;Where&apos;s Waldo?&quot; - the photo tagging
-        game that will test your observation skills!&rdquo;
+        Welcome to &quot;Where&apos;s Waldo?&quot; - the photo tagging game that
+        will test your observation skills!
       </h2>
       <p className="bold">Objective and Gameplay</p>
       <p>
