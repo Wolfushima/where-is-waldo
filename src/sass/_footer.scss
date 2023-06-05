@@ -34,6 +34,7 @@
       transition: all .1s ease-in-out;
       span {
         font-weight: 900;
+        transition: all .5s ease-in-out;
       }
       span:before {
         content: "\00a0 ";
@@ -46,9 +47,16 @@
         min-width: 30px;
         max-width: 30px;
         filter: invert(99%) sepia(84%) saturate(6490%) hue-rotate(181deg) brightness(120%) contrast(92%);
+        transition: all .5s ease-in-out;
+        border-radius: 100%;
       }
       &:hover {
-        transform: scale(1.05);
+        img {
+          transform: rotate(360deg);
+        }
+        span {
+          text-shadow: 0 0 1px $bg-white;
+        }
       }
     }
   }
