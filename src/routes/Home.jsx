@@ -10,8 +10,8 @@ export default function Home() {
     <div id="home" className="home">
       <Wrapper className="home">
         <HomeGameDescription />
-        <HomeLeaderboard />
         <HomeGameLevels />
+        <HomeLeaderboard />
       </Wrapper>
       <Footer />
     </div>
