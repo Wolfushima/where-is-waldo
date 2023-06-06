@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/where-is-waldo/static/css/main.37e2d716.css",
+    "main.js": "/where-is-waldo/static/js/main.50025b25.js",
+    "static/media/gameboard-level-6.webp": "/where-is-waldo/static/media/gameboard-level-6.68f9c1d9805da1cea455.webp",
+    "static/media/gameboard-level-2.webp": "/where-is-waldo/static/media/gameboard-level-2.a32deaef3489444190ec.webp",
+    "static/media/gameboard-level-3.webp": "/where-is-waldo/static/media/gameboard-level-3.0be5dd638a70874445b9.webp",
+    "static/media/gameboard-level-5.webp": "/where-is-waldo/static/media/gameboard-level-5.3bf16abb52db33c08b15.webp",
+    "static/media/gameboard-level-1.webp": "/where-is-waldo/static/media/gameboard-level-1.2efc80aa8786bf630bcd.webp",
+    "static/media/gameboard-level-4.webp": "/where-is-waldo/static/media/gameboard-level-4.e8b6e5e756bd395cf97e.webp",
+    "static/media/home-level-6.webp": "/where-is-waldo/static/media/home-level-6.91e79f18783816321d82.webp",
+    "static/media/home-level-2.webp": "/where-is-waldo/static/media/home-level-2.4a667f6509b8c22315c4.webp",
+    "static/media/home-level-5.webp": "/where-is-waldo/static/media/home-level-5.1de2239cc93822d477fd.webp",
+    "static/media/home-level-3.webp": "/where-is-waldo/static/media/home-level-3.597d4e049412e8d90c0b.webp",
+    "static/media/home-level-1.webp": "/where-is-waldo/static/media/home-level-1.b1f4651ebdfed84cdb11.webp",
+    "static/media/home-level-4.webp": "/where-is-waldo/static/media/home-level-4.c71bb8eac8a153f718e4.webp",
+    "static/media/wanda.png": "/where-is-waldo/static/media/wanda.0ec74fee253189ede6fb.png",
+    "static/media/waldo.png": "/where-is-waldo/static/media/waldo.16420ddfbdffcd20a28a.png",
+    "static/media/odlaw.png": "/where-is-waldo/static/media/odlaw.62fd5d3cc3b62b153bf5.png",
+    "static/media/wizard.png": "/where-is-waldo/static/media/wizard.ab04b9effc7a7ab1002c.png",
+    "static/media/github-logo.svg": "/where-is-waldo/static/media/github-logo.05dead8764fa42d3513063958a4ae3f7.svg",
+    "index.html": "/where-is-waldo/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.37e2d716.css",
+    "static/js/main.50025b25.js"
+  ]
+}
