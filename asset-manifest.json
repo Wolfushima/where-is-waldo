@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/where-is-waldo/static/css/main.246986f1.css",
-    "main.js": "/where-is-waldo/static/js/main.50025b25.js",
+    "main.js": "/where-is-waldo/static/js/main.63ed3635.js",
     "static/media/gameboard-level-6.webp": "/where-is-waldo/static/media/gameboard-level-6.68f9c1d9805da1cea455.webp",
     "static/media/gameboard-level-2.webp": "/where-is-waldo/static/media/gameboard-level-2.a32deaef3489444190ec.webp",
     "static/media/gameboard-level-3.webp": "/where-is-waldo/static/media/gameboard-level-3.0be5dd638a70874445b9.webp",
@@ -18,11 +18,11 @@
     "static/media/waldo.png": "/where-is-waldo/static/media/waldo.16420ddfbdffcd20a28a.png",
     "static/media/odlaw.png": "/where-is-waldo/static/media/odlaw.62fd5d3cc3b62b153bf5.png",
     "static/media/wizard.png": "/where-is-waldo/static/media/wizard.ab04b9effc7a7ab1002c.png",
-    "static/media/github-logo.svg": "/where-is-waldo/static/media/github-logo.05dead8764fa42d3513063958a4ae3f7.svg",
-    "index.html": "/where-is-waldo/index.html"
+    "index.html": "/where-is-waldo/index.html",
+    "static/media/github-logo.svg": "/where-is-waldo/static/media/github-logo.05dead8764fa42d3513063958a4ae3f7.svg"
   },
   "entrypoints": [
     "static/css/main.246986f1.css",
-    "static/js/main.50025b25.js"
+    "static/js/main.63ed3635.js"
   ]
 }
