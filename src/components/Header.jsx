@@ -1,9 +1,11 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import Wrapper from './Wrapper';
 import WaldoImg from '../assets/characters/waldo.png';
 
 const Header = () => {
+  const { pathname } = useLocation();
+
   return (
     <header id="header" className="header">
       <Wrapper className="header">
@@ -23,7 +25,12 @@ const Header = () => {
               <NavLink to="/">Home</NavLink>
             </li>
             <li>
-              <NavLink to="leaderboard/LEVEL1">Leaderboard</NavLink>
+              <NavLink
+                to="leaderboard/LEVEL1"
+                className={pathname.includes('leaderboard') ? 'active' : ''}
+              >
+                Leaderboard
+              </NavLink>
             </li>
             <li>
               <NavLink to="about">About</NavLink>
