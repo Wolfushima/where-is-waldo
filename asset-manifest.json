@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/where-is-waldo/static/css/main.37e2d716.css",
+    "main.css": "/where-is-waldo/static/css/main.246986f1.css",
     "main.js": "/where-is-waldo/static/js/main.50025b25.js",
     "static/media/gameboard-level-6.webp": "/where-is-waldo/static/media/gameboard-level-6.68f9c1d9805da1cea455.webp",
     "static/media/gameboard-level-2.webp": "/where-is-waldo/static/media/gameboard-level-2.a32deaef3489444190ec.webp",
@@ -22,7 +22,7 @@
     "index.html": "/where-is-waldo/index.html"
   },
   "entrypoints": [
-    "static/css/main.37e2d716.css",
+    "static/css/main.246986f1.css",
     "static/js/main.50025b25.js"
   ]
 }
