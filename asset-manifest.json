@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/where-is-waldo/static/css/main.246986f1.css",
+    "main.css": "/where-is-waldo/static/css/main.53f1d238.css",
     "main.js": "/where-is-waldo/static/js/main.63ed3635.js",
     "static/media/gameboard-level-6.webp": "/where-is-waldo/static/media/gameboard-level-6.68f9c1d9805da1cea455.webp",
     "static/media/gameboard-level-2.webp": "/where-is-waldo/static/media/gameboard-level-2.a32deaef3489444190ec.webp",
@@ -22,7 +22,7 @@
     "static/media/github-logo.svg": "/where-is-waldo/static/media/github-logo.05dead8764fa42d3513063958a4ae3f7.svg"
   },
   "entrypoints": [
-    "static/css/main.246986f1.css",
+    "static/css/main.53f1d238.css",
     "static/js/main.63ed3635.js"
   ]
 }
