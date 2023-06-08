@@ -30,7 +30,7 @@ One challenge I encountered with Redux was integrating it with Firebase. I had t
 
 ## Showcase
 
-[where-is-waldo-showcase](./readme-assets/where-is-waldo-showcase.mp4)
+https://github.com/Wolfushima/where-is-waldo/assets/75055499/9f536fa2-1734-46a7-86d5-cdfcb36252bb
 
 ## Features
 
