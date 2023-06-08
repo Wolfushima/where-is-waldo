@@ -1,6 +1,6 @@
 <h1 align="center">Where is Waldo?</h1>
 
-![where-is-waldo-full-page-screenshot](./readmeassets/where-is-waldo-full-page-screenshot.jpg)
+![where-is-waldo-full-page-screenshot](./readme-assets/where-is-waldo-full-page-screenshot.jpg)
 
 ## Description
 
