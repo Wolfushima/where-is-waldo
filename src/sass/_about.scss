@@ -1,8 +1,8 @@
 .about {
   background: $red;
   width: 100%;
-  height: 100vh;
-  min-height: 100vh;
+  height: calc(100vh - 80px);
+  min-height: calc(100vh - 80px);
   padding-bottom: calc(100vh - 100svh);
   &__wrapper {
     max-width: 1440px;
