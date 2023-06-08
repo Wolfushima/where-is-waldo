@@ -1,6 +1,6 @@
 <h1 align="center">Where is Waldo?</h1>
 
-![where-is-waldo-full-page-screenshot](./readme-assets/where-is-waldo-full-page-screenshot.jpg)
+![where-is-waldo-full-page-screenshot](https://github.com/Wolfushima/where-is-waldo/assets/75055499/20a44c7b-bfbd-45a8-8a18-c9627ff53535)
 
 ## Description
 
